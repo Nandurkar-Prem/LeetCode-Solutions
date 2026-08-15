@@ -5,14 +5,15 @@ class Solution {
 
         for(int num : nums){
             xor ^= num;
-
             if(num == 0){
                 zeros++;
             }
         }
+
         if(zeros == nums.length){
             return 0;
         }
+
         if(xor != 0){
             return nums.length;
         }
