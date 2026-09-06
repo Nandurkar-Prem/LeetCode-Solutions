@@ -8,7 +8,7 @@ class Solution {
                 start++;
             } 
         }
-        while(start < nums.length){
+        while(start < n){
            nums[start++] = 0;
         }
     }
