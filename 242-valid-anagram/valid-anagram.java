@@ -4,12 +4,22 @@ class Solution {
             return false;
         }
 
-        char[] arr1 = s.toCharArray();
-        char[] arr2 = t.toCharArray();
+        HashMap<Character, Integer> map = new HashMap<>();
 
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
+        for(int i=0;i<s.length();i++){
+            char ch = s.charAt(i);
+            map.put(ch, map.getOrDefault(ch, 0)+1);
+        }
 
-        return Arrays.equals(arr1, arr2);
+        for(int j=0;j<t.length();j++){
+            char ch = t.charAt(j);
+
+            if(!map.containsKey(ch) || map.get(ch) == 0){
+                return false;
+            }
+
+            map.put(ch, map.get(ch) - 1);
+        }
+        return true;
     }
 }
