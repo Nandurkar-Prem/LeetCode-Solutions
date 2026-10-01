@@ -14,15 +14,10 @@ class Solution {
             if(c == '(' || c == '{' || c == '['){
                 stk[++top] = c;
             }else{
-                if(top == -1){
-                    return false;
-                }
+                if(top == -1) return false;
 
                 char open = stk[top--];
-
-                if((open == '(' && c != ')') ||
-                    (open == '{' && c != '}') || 
-                    (open == '[' && c != ']')){
+                if((open == '(' && c != ')') || (open == '{' && c != '}') ||  (open == '[' && c != ']')){
                         return false;
                 }
             }
